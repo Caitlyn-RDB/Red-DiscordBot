@@ -171,7 +171,7 @@ class ModInfo(MixinMeta):
     @commands.command()
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
-    async def userinfo(self, ctx, *, member: discord.Member = None):
+    async def uinfo(self, ctx, *, member: discord.Member = None):
         """Show information about a member.
 
         This includes fields for status, discord join date, server
