@@ -1449,32 +1449,12 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
     @commands.command()
     @commands.check(CoreLogic._can_get_invite_url)
     async def invite(self, ctx):
-<<<<<<< HEAD
         """Invites now on bot's profile."""
         embed = discord.Embed(
             title="Click on my profile and click the big button saying **Add me!**",
             color=(await ctx.embed_colour()),
         )
         await ctx.send(embed=embed)
-=======
-        """Shows [botname]'s invite url.
-
-        This will always send the invite to DMs to keep it private.
-
-        This command is locked to the owner unless `[p]inviteset public` is set to True.
-
-        **Example:**
-            - `[p]invite`
-        """
-        try:
-            await ctx.author.send(await self.bot.get_invite_url())
-            await ctx.tick()
-        except discord.errors.Forbidden:
-            await ctx.send(
-                "I couldn't send the invite message to you in DM. "
-                "Either you blocked me or you disabled DMs in this server."
-            )
->>>>>>> fbe378657c7017d397d9aa6fd040ffd1c9a372ef
 
     @commands.group()
     @checks.is_owner()
